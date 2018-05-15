@@ -132,7 +132,7 @@ export default {
     ...mapGetters(["loginState"])
   },
   watch: {
-    loginState() {
+    /*loginState() {
       if (!this.$store.getters.loginState.state) {
         this.$confirm("您的登录已超时?", "提示", {
           showCancelButton: false,
@@ -150,7 +150,7 @@ export default {
             window.location = "/dr-admin";
           });
       }
-    }
+    }*/
   }
 };
 </script>

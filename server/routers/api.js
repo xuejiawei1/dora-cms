@@ -56,6 +56,10 @@ router.get('/content/getSimpleListByParams', (req, res, next) => { req.query.sta
 // 查询文档详情
 router.get('/content/getContent', Content.getOneContent)
 
+//获得所有文档
+//router.get('/content/getAllContens', Content.getAllContens)
+
+
 // 更新喜欢文档
 router.get('/content/updateLikeNum', checkUserSession, Content.updateLikeNum)
 
