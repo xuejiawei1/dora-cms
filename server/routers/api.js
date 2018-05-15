@@ -58,7 +58,8 @@ router.get('/content/getContent', Content.getOneContent)
 
 //获得所有文档
 //router.get('/content/getAllContens', Content.getAllContens)
-
+//删除文章
+router.get('/content/deleteContent',  Content.delContent)
 
 // 更新喜欢文档
 router.get('/content/updateLikeNum', checkUserSession, Content.updateLikeNum)
@@ -73,6 +74,8 @@ router.post('/content/updateOne', checkUserSession, (req, res, next) => {
   req.query.role = 'user';
   next();
 }, Content.updateContent)
+
+
 
 //文章二维码生成
 router.get('/qrImg', (req, res, next) => {
