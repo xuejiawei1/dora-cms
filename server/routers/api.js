@@ -57,7 +57,7 @@ router.get('/content/getSimpleListByParams', (req, res, next) => { req.query.sta
 router.get('/content/getContent', Content.getOneContent)
 
 //获得所有文档
-//router.get('/content/getAllContens', Content.getAllContens)
+router.get('/content/getAllContens',(req, res, next) => { req.query.state = true; next() }, Content.getAllContens)
 //删除文章
 router.get('/content/deleteContent',  Content.delContent)
 
@@ -98,7 +98,8 @@ router.post('/users/doReg', User.regAction);
 
 // 修改用户信息
 router.post('/users/updateInfo', checkUserSession, User.updateUser);
-
+// 修改密码
+router.post('/users/updatePassword',  User.updatePassword);
 // 获取用户通知信息
 router.get('/users/getUserNotifys', checkUserSession, (req, res, next) => { req.query.user = req.session.user._id; next() }, UserNotify.getUserNotifys);
 
@@ -128,7 +129,7 @@ router.get('/contentTag/getList', ContentTag.getContentTags)
 
 // 获取用户留言列表
 router.get('/message/getList', Message.getMessages)
-
+//发送留言
 router.post('/message/post', Message.postMessages)
 
 // 获取系统配置信息

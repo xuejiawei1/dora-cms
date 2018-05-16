@@ -19,10 +19,6 @@ var UserSchema = new Schema({
     email: String,
     qq: Number,
     phoneNum: Number,
-    comments: { type: String, default: "这个人很懒，什么都没有留下..." },
-    position: String, // 职位
-    company: String,  // 大学或公司
-    website: String, // 个人站点
     date: { type: Date, default: Date.now },
     logo: { type: String, default: "/upload/images/defaultlogo.png" },
     group: { type: String, default: "0" },
@@ -30,6 +26,7 @@ var UserSchema = new Schema({
     province: String, // 所在省份
     city: String, // 所在城市
     year: Number, // 出生年
+    birth:{ type: Date,default:"1991-01-01"},
     openid: String,   // 针对qq互联
     retrieve_time: { type: Number } // 用户发送激活请求的时间
 

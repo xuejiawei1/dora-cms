@@ -60,6 +60,14 @@ function createRenderer(bundle, template) {
 
 const app = express()
 
+app.all('/*', function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header('Access-Control-Allow-Methods', 'PUT, GET, POST, DELETE, OPTIONS');
+    res.header("Access-Control-Allow-Headers", "X-Requested-With");
+    res.header('Access-Control-Allow-Headers', 'Content-Type');
+    next();
+});
+
 // 由 html-webpack-plugin 生成
 let frontend
 let backend
