@@ -97,7 +97,7 @@ router.post('/users/doLogin', User.loginAction);
 router.post('/users/doReg', User.regAction);
 
 // 修改用户信息
-router.post('/users/updateInfo', checkUserSession, User.updateUser);
+router.post('/users/updateInfo', User.updateUser);
 // 修改密码
 router.post('/users/updatePassword',  User.updatePassword);
 // 获取用户通知信息

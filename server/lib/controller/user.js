@@ -89,6 +89,7 @@ class User {
     async updateUser(req, res, next) {
         const form = new formidable.IncomingForm();
         form.parse(req, async (err, fields, files) => {
+           
             try {
                 checkFormData(req, res, fields);
             } catch (err) {
