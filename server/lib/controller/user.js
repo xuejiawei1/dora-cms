@@ -48,7 +48,28 @@ class User {
         res.write(buffer);
         res.end();
     }
+    async getId(req, res, next) {
+        const userObj = {
+            userName:req.query.userName
+        }
+            try {
+                let user = await UserModel.findOne(userObj);
+                if (user) {
+                    res.send({
+                        state: 'success',
+                        id:user._id
+                    });
+                } 
+            } catch (err) {
+                res.send({
+                    state: 'error',
+                    type: 'ERROR_IN_SAVE_DATA',
+                    message: err.stack
+                })
+            }
 
+    }
+    
     async getUsers(req, res, next) {
         try {
             let current = req.query.current || 1;
@@ -59,7 +80,6 @@ class User {
                 let reKey = new RegExp(searchkey, 'i')
                 queryObj.userName = { $regex: reKey }
             }
-
             const Users = await UserModel.find(queryObj, { password: 0 }).sort({ date: -1 }).skip(Number(pageSize) * (Number(current) - 1)).limit(Number(pageSize));
             const totalItems = await UserModel.count(queryObj);
             res.send({

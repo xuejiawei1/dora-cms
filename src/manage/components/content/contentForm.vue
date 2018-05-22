@@ -123,22 +123,22 @@ export default {
             trigger: "blur"
           },
           {
-            min: 5,
+            min: 2,
             max: 50,
-            message: "5-50个非特殊字符",
+            message: "2-50个非特殊字符",
             trigger: "blur"
           }
         ],
         stitle: [
           {
-            required: true,
+            
             message: "请输入简短标题",
             trigger: "blur"
           },
           {
-            min: 5,
+            min: 2,
             max: 50,
-            message: "5-50个非特殊字符",
+            message: "2-50个非特殊字符",
             trigger: "blur"
           }
         ],
@@ -168,14 +168,14 @@ export default {
         ],
         discription: [
           {
-            required: true,
+            required: false,
             message: "请输入内容摘要",
             trigger: "blur"
           },
           {
-            min: 5,
+            min: 0,
             max: 300,
-            message: "5-100个非特殊字符",
+            message: "0-100个非特殊字符",
             trigger: "blur"
           }
         ],

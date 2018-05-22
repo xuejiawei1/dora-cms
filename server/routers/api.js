@@ -46,7 +46,8 @@ router.get('/users/session', (req, res) => {
 });
 
 router.get('/getImgCode', User.getImgCode);
-
+//获取用户ID
+router.get('/users/getId',(req,res,next)=>{req.query.userName;next()},User.getId);
 // 查询文档列表
 router.get('/content/getList', (req, res, next) => { req.query.state = true; next() }, Content.getContents);
 
@@ -113,7 +114,7 @@ router.get('/users/delUserNotify', checkUserSession, UserNotify.delUserNotify);
 router.get('/users/getUserReplies', checkUserSession, (req, res, next) => { req.query.user = req.session.user._id; next() }, Message.getMessages);
 
 // 获取用户发布文章
-router.get('/users/getUserContents', checkUserSession, (req, res, next) => { req.query.user = req.session.user._id; next() }, Content.getContents);
+router.get('/users/getUserContents', checkUserSession, (req, res, next) => { req.query.user; next() }, Content.getContents);
 
 // 用户注销
 router.get('/users/logOut', checkUserSession, User.logOut);

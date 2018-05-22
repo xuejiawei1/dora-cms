@@ -31,11 +31,11 @@ function checkFormData(req, res, fields) {
     if (fields._id && !siteFunc.checkCurrentId(fields._id)) {
         errMsg = '非法请求，请稍后重试！';
     }
-    if (!validator.isLength(fields.title, 5, 50)) {
-        errMsg = '5-50个非特殊字符!';
+    if (!validator.isLength(fields.title, 2, 50)) {
+        errMsg = '2-50个非特殊字符!';
     }
-    if (fields.stitle && !validator.isLength(fields.stitle, 5, 50)) {
-        errMsg = '5-50个非特殊字符!';
+    if (fields.stitle && !validator.isLength(fields.stitle, 2, 50)) {
+        errMsg = '2-50个非特殊字符!';
     }
     if (!fields.categories) {
         errMsg = '请选择文档类别!';
@@ -43,8 +43,8 @@ function checkFormData(req, res, fields) {
     if (!fields.tags) {
         errMsg = '请选择文档标签!';
     }
-    if (!validator.isLength(fields.discription, 5, 300)) {
-        errMsg = '5-300个非特殊字符!';
+    if (!validator.isLength(fields.discription, 0, 300)) {
+        errMsg = '0-300个非特殊字符!';
     }
     if (fields.comments && !validator.isLength(fields.comments, 5)) {
         errMsg = '文档内容不得少于5个字符!';

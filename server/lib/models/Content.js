@@ -12,6 +12,7 @@ var ContentCategory = require('./ContentCategory');
 var ContentTag = require('./ContentTag');
 var AdminUser = require('./AdminUser');
 var User = require('./User');
+var os = require('os');
 var ContentSchema = new Schema({
     _id: {
         type: String,
