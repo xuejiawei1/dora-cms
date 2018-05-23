@@ -136,7 +136,7 @@ class User {
             try {
                 await UserModel.findOneAndUpdate({ userName: item_userName }, { $set: userObj });
                 // 更新缓存
-                delete userObj.password;
+               // delete userObj.password;
                 req.session.user = _.assign(req.session.user, userObj)
                 res.send({
                     state: 'success'
@@ -156,7 +156,7 @@ class User {
         const form = new formidable.IncomingForm();
         form.parse(req, async (err, fields, files) => {
             const userObj = {
-                confirm: fields.confirm,
+                password: fields.password,
             }
             if (fields.password) {
                 userObj.password = service.encrypt(fields.password, settings.encrypt_key);
@@ -242,7 +242,7 @@ class User {
                 return;
             }
             const userObj = {
-                email: fields.email,
+                userName: fields.userName,
                 password: service.encrypt(fields.password, settings.encrypt_key),
             }
             try {
