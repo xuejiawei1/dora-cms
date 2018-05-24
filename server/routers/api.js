@@ -66,7 +66,7 @@ router.get('/content/deleteContent',  Content.delContent)
 router.get('/content/updateLikeNum', checkUserSession, Content.updateLikeNum)
 
 // 添加或更新文章
-router.post('/content/addOne', checkUserSession, (req, res, next) => {
+router.post('/content/addOne',(req, res, next) => {
   req.query.role = 'user';
   next();
 }, Content.addContent)

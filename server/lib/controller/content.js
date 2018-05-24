@@ -31,18 +31,18 @@ function checkFormData(req, res, fields) {
     if (fields._id && !siteFunc.checkCurrentId(fields._id)) {
         errMsg = '非法请求，请稍后重试！';
     }
-    if (!validator.isLength(fields.title, 2, 50)) {
-        errMsg = '2-50个非特殊字符!';
+    if (!validator.isLength(fields.title, 0, 50)) {
+        errMsg = '0-50个非特殊字符!';
     }
-    if (fields.stitle && !validator.isLength(fields.stitle, 2, 50)) {
-        errMsg = '2-50个非特殊字符!';
+    if (fields.stitle && !validator.isLength(fields.stitle, 0, 50)) {
+        errMsg = '0-50个非特殊字符!';
     }
     if (!fields.categories) {
         errMsg = '请选择文档类别!';
     }
-    if (!fields.tags) {
+   /* if (!fields.tags) {
         errMsg = '请选择文档标签!';
-    }
+    }*/
     if (!validator.isLength(fields.discription, 0, 300)) {
         errMsg = '0-300个非特殊字符!';
     }
@@ -269,7 +269,7 @@ class Content {
                 tags: fields.tags,
                 keywords: fields.keywords,
                 sImg: fields.sImg,
-                author: !_.isEmpty(req.session.adminUserInfo) ? req.session.adminUserInfo._id : '',
+                author: fields.author,
                 state: fields.state,
                 isTop: fields.isTop,
                 from: fields.from,
@@ -280,20 +280,20 @@ class Content {
 
             if (role === 'user') {
                 // TODO 临时控制普通用户添加
-                let hadAddContentsNum = await ContentModel.count({ uAuthor: req.session.user._id });
+                /*let hadAddContentsNum = await ContentModel.count({ uAuthor: req.session.user._id });
                 if (hadAddContentsNum > 3) {
                     res.send({
                         state: 'error',
                         message: '您的操作太频繁，请歇会吧！'
                     });
-                }
+                }*/
                 groupObj.markDownComments = fields.markDownComments;
                 groupObj.comments = marked(
                     (fields.markDownComments).replace(/<!--more-->/g, "")
                 )
                 groupObj.stitle = groupObj.title;
                 groupObj.from = '3';
-                groupObj.uAuthor = req.session.user._id;
+                groupObj.uAuthor = fields.author;
                 groupObj.state = false;
                 groupObj.author = '';
             }
