@@ -11,8 +11,8 @@
             <h3 class="title">
               <span>登录</span>
             </h3>
-            <el-form-item prop="email" label="邮箱">
-              <el-input placeholder="请填写邮箱" v-model="userLoginFormData.email"></el-input>
+            <el-form-item prop="userName" label="用户名">
+              <el-input placeholder="请填写用户名" v-model="userLoginFormData.userName"></el-input>
             </el-form-item>
             <el-form-item prop="password" label="密码">
               <el-input placeholder="请输入密码" type="password" @keyup.enter.native="submitForm('ruleForm')" v-model="userLoginFormData.password"></el-input>
@@ -53,20 +53,10 @@ export default {
     return {
       referPath: "/",
       rules: {
-        email: [
+        userName: [
           {
             required: true,
-            message: "请输入邮箱",
-            trigger: "blur"
-          },
-          {
-            validator: (rule, value, callback) => {
-              if (!validatorUtil.checkEmail(value)) {
-                callback(new Error("请输入正确的邮箱!"));
-              } else {
-                callback();
-              }
-            },
+            message: "请输入用户名",
             trigger: "blur"
           }
         ],

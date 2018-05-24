@@ -269,7 +269,7 @@ class Content {
                 tags: fields.tags,
                 keywords: fields.keywords,
                 sImg: fields.sImg,
-                author: fields.author,
+                author: !_.isEmpty(req.session.adminUserInfo) ? req.session.adminUserInfo._id : fields.author,
                 state: fields.state,
                 isTop: fields.isTop,
                 from: fields.from,
@@ -293,7 +293,7 @@ class Content {
                 )
                 groupObj.stitle = groupObj.title;
                 groupObj.from = '3';
-                groupObj.uAuthor = fields.author;
+                groupObj.uAuthor = !_.isEmpty(req.session.adminUserInfo) ? req.session.adminUserInfo._id : fields.author;
                 groupObj.state = false;
                 groupObj.author = '';
             }
