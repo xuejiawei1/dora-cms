@@ -17,31 +17,6 @@
 
 7、首页添加了用户留言模块，以及推荐模块
 
-8、优化相关样式和界面布局
-
-9、修复了其它bug
-
-
-更新方法： 
-1、checkout 最新 2.0.5 代码
-
-2、删除 node_modules,重新安装依赖包
-
-3、启动数据库，执行npm run dev 
-
-
-## 说明
-
-DoraCMS 使用的技术栈：
-
-1、vue + vuex + vue-router 全家桶
-
-2、webpack 2
-
-3、nodejs 8.1 + express 4
-
-4、mongodb 3+
-
 演示地址： [前端开发俱乐部](https://www.html-js.cn)
 后台登录： https://www.html-js.cn/dr-admin     测试账号：doracms/123456
 
@@ -110,41 +85,10 @@ DoraCMS 使用的技术栈：
 
 ```
 
-
-
-
-
-## 准备工作:
-安装 NodeJS:
-https://nodejs.org/zh-cn/
-
-安装 Mongodb:
-https://www.mongodb.com/download-center#community
-
-```shell
-# 安装依赖
-$ npm install
-
-# 开发模式
-$ npm run dev
-
-# 生产模式
-$ npm run build
-
-# 启动(需先生成静态文件)
-$ npm run start
-```
-
 首页
-http://localhost:8080
+http://localhost:8080  
+http://35.194.153.183:8080
 
 登录
-http://localhost:8080/dr-admin
-
-# 捐赠
-如果你发现DoraCMS很有用，可以请生哥喝杯咖啡(⊙o⊙)哦
-<img width="650" src="http://7xkrk4.com1.z0.glb.clouddn.com/payme.jpg" alt="">
-
-# LICENSE
-
-MIT
+http://localhost:8080/dr-admin  
+http://35.194.153.183:8080/dr-admin
