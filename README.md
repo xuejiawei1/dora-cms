@@ -1,22 +1,3 @@
-# doracms 2.0.5
-
-![DoraCMS](http://7xkrk4.com1.z0.glb.clouddn.com/doracms2.jpg "DoraCMS")
-
-## 2.0.5版本更新
-1、用户中心添加文章功能，用户可以发布文章了，支持markdown语法
-
-2、优化webpack打包流程，压缩lodash，拆分element-ui
-
-3、服务端异常处理
-
-4、用户留言xss处理
-
-5、修复文章点击量不准确的问题
-
-6、修复在开发环境下，后台切换登录超级管理员和测试管理员，左侧菜单没有变化的问题
-
-7、首页添加了用户留言模块，以及推荐模块
-
 演示地址： [前端开发俱乐部](https://www.html-js.cn)
 后台登录： https://www.html-js.cn/dr-admin     测试账号：doracms/123456
 
