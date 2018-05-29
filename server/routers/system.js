@@ -121,6 +121,7 @@ router.post('/upload', function (req, res, next) {
 
         if (fileType == 'images') {
             typeKey = "img"
+            newFileName = typeKey + ms + "." + thisType;
         }
         newFileName = typeKey + ms + "." + thisType;
 

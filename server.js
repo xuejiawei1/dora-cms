@@ -32,7 +32,6 @@ const routes = require('./server/routers/api')
 const foreground = require('./server/routers/foreground')
 const manage = require('./server/routers/manage');
 const system = require('./server/routers/system');
-
 const isCacheable = () => useMicroCache
 const microCache = lurCache({
     max: 100,
@@ -150,7 +149,6 @@ app.use('/service-worker.js', serve('./dist/service-worker.js'))
 app.use('/', foreground);
 app.use('/api', routes);
 app.use('/system', system);
-
 // 前台路由, ssr 渲染
 app.get(['/', '/page/:current(\\d+)?', '/:cate1?___:typeId?/:current(\\d+)?',
     '/:cate0/:cate1?___:typeId?/:current(\\d+)?', '/search/:searchkey/:current(\\d+)?',
