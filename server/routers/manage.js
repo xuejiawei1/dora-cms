@@ -144,7 +144,7 @@ router.get('/regUser/getList', authToken, authPower, User.getUsers)
 
 router.post('/regUser/updateOne', authToken, authPower, User.updateUser)
 
-router.get('/regUser/deleteUser', authToken, authPower, User.delUser)
+router.get('/regUser/deleteUser',User.delUser)
 
 
 /**
