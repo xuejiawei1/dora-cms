@@ -115,7 +115,7 @@ class Message {
             if (fields.utype === '1') { // 管理员
                 messageObj.adminAuthor = req.session.adminUserInfo._id;
             } else {
-                messageObj.author = req.session.user._id;
+                messageObj.author = !_.isEmpty(req.session.adminUserInfo) ? req.session.adminUserInfo._id : fields.author;
             }
 
             // console.log('----messageObj---', messageObj);

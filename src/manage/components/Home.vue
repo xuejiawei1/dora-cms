@@ -2,7 +2,10 @@
     <el-row class="container" v-loading.body="loading">
         <el-col :span="24" class="header">
             <el-col :span="10" class="logo" :class="collapsed?'logo-collapse-width':'logo-width'">
-                <router-link v-show="!collapsed" :to="{path: '/main'}"><img src="../assets/images/doracms-logo.png" alt="DoraCMS内容管理系统" /></router-link>
+                <router-link v-show="!collapsed" :to="{path: '/main'}">
+                <h3 style="position: absolute;top: -30px;left:50px;">
+              <b style="color:#1D8CE0;">游趣</b>
+              </h3></router-link>
             </el-col>
             <el-col :span="10">
                 <div class="tools" @click.prevent="collapse">
