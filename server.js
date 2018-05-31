@@ -112,7 +112,7 @@ if (settings.openRedis) {
             port: settings.redis_port,
             host: settings.redis_host,
             pass: settings.redis_psd,
-            ttl: 180000000000000000000 // 过期时间
+            ttl: 1800 // 过期时间
         }),
         resave: true,
         saveUninitialized: true
