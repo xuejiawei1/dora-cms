@@ -114,7 +114,7 @@ router.get('/users/delUserNotify', checkUserSession, UserNotify.delUserNotify);
 router.get('/users/getUserReplies', (req, res, next) => { req.query.user = !_.isEmpty(req.session.user) ? req.session.user._id : fields.author; next() }, Message.getMessages);
 
 // 获取用户发布文章
-router.get('/users/getUserContents',(req, res, next) => { req.query.user=fields.author; next() }, Content.getContents);
+router.get('/users/getUserContents',(req, res, next) => { req.query.user; next() }, Content.getContents);
 
 // 用户注销
 router.get('/users/logOut', checkUserSession, User.logOut);
