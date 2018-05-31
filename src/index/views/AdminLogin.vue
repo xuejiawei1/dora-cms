@@ -20,11 +20,11 @@
                 <i class="fa fa-lock"></i>
                 <el-input size="medium" type="password" v-model="adminLoginFormData.password" placeholder="请输入密码"></el-input>
               </el-form-item>
-              <el-form-item prop="imageCode">
+              <!--<el-form-item prop="imageCode">
                 <i class="fa fa-random"></i>
                 <el-input size="medium" style="width: 40%" type="imageCode" placeholder="图形码" @keyup.enter.native="submitForm('ruleForm')" v-model="adminLoginFormData.imageCode"></el-input>
                 <img :src="imgCodeUrl" class="imageCode" @click="reSetImgCode"/>
-              </el-form-item>
+              </el-form-item>-->
               <el-form-item class="submit-btn">
                 <el-button size="medium" type="primary" @click="submitForm('ruleForm')">登录</el-button>
               </el-form-item>
@@ -89,10 +89,10 @@ export default {
             trigger: "blur"
           }
         ],
-        imageCode: [
+        /*imageCode: [
           { required: true, message: "请输入验证码", trigger: "blur" },
           { min: 5, max: 5, message: "请输入 5 个字符", trigger: "blur" }
-        ]
+        ]*/
       }
     };
   },

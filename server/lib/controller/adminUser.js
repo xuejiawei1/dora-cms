@@ -178,9 +178,9 @@ class AdminUser {
                     errMsg = '请输入正确的用户名'
                 }
 
-                if (!fields.imageCode || fields.imageCode != req.session.imageCode) {
+                /*if (!fields.imageCode || fields.imageCode != req.session.imageCode) {
                     errMsg = '请输入正确的验证码'
-                }
+                }*/
 
                 if (errMsg) {
                     throw new siteFunc.UserException(errMsg);
