@@ -111,7 +111,7 @@ router.get('/users/setNoticeRead', checkUserSession, (req, res, next) => { req.q
 router.get('/users/delUserNotify', checkUserSession, UserNotify.delUserNotify);
 
 // 获取用户参与话题
-router.get('/users/getUserReplies', checkUserSession, (req, res, next) => { req.query.user = req.session.user._id; next() }, Message.getMessages);
+router.get('/users/getUserReplies', (req, res, next) => { req.query.user = !_.isEmpty(req.session.user) ? req.session.user._id : fields.author; next() }, Message.getMessages);
 
 // 获取用户发布文章
 router.get('/users/getUserContents',(req, res, next) => { req.query.user; next() }, Content.getContents);
