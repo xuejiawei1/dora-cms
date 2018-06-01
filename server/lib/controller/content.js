@@ -277,7 +277,6 @@ class Content {
                 comments: fields.comments,
                 likeUserIds: []
             }
-
             if (role === 'user') {
                 // TODO 临时控制普通用户添加
                 /*let hadAddContentsNum = await ContentModel.count({ uAuthor: req.session.user._id });
