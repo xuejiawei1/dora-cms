@@ -355,7 +355,7 @@ class Content {
                 )
                 contentObj.stitle = contentObj.title;
                 contentObj.from = '3';
-                contentObj.uAuthor = req.session.user._id;
+                contentObj.uAuthor = !_.isEmpty(req.session.user) ? req.session.user._id : fields.uAuthor.id;
                 (role === 'user') && (contentObj.state = false);
                 contentObj.author = '';
             }
