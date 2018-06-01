@@ -292,7 +292,7 @@ class Content {
                 )
                 groupObj.stitle = groupObj.title;
                 groupObj.from = '3';
-                groupObj.uAuthor = fields.author;
+                groupObj.uAuthor = !_.isEmpty(req.session.user._id) ? req.session.user._id : fields.author;
                 groupObj.state = fields.state;
                 groupObj.author = '';
             }
