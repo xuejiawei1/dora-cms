@@ -48,6 +48,8 @@ router.get('/users/session', (req, res) => {
 router.get('/getImgCode', User.getImgCode);
 //获取用户ID
 router.get('/users/getId',(req,res,next)=>{req.query.userName;next()},User.getId);
+//获取用户
+router.get('/users/getUser',(req,res,next)=>{req.query.searchkey;next()},User.getUsers);
 // 查询文档列表
 router.get('/content/getList', (req, res, next) => { req.query.state = true; next() }, Content.getContents);
 

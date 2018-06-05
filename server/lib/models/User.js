@@ -21,6 +21,7 @@ var UserSchema = new Schema({
     phoneNum: Number,
     date: { type: Date, default: Date.now },
     logo: { type: String, default: "/upload/images/defaultlogo.png" },
+    bgLogo:{ type: String, default: "/upload/images/defaultbglogo.jpg"},//背景图片
     group: { type: String, default: "0" },
     gender: String,
     province: String, // 所在省份

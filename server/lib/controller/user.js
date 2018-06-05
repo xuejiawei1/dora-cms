@@ -78,7 +78,7 @@ class User {
 
             if (searchkey) {
                 let reKey = new RegExp(searchkey, 'i')
-                queryObj.userName = { $regex: reKey }
+                queryObj._id = { $regex: reKey }
             }
             const Users = await UserModel.find(queryObj, { password: 0 }).sort({ date: -1 }).skip(Number(pageSize) * (Number(current) - 1)).limit(Number(pageSize));
             const totalItems = await UserModel.count(queryObj);
@@ -127,6 +127,7 @@ class User {
                 name: fields.name || '',
                 email: fields.email,
                 logo: fields.logo,
+                bgLogo:fields.bgLogo,
                 gender: fields.gender,
                 birth:fields.birth,
                 phoneNum: fields.phoneNum || '',
