@@ -123,7 +123,7 @@ class User {
             }
 
             const userObj = {
-                userName: fields.userName,
+                //userName: fields.userName,
                 name: fields.name || '',
                 email: fields.email,
                 logo: fields.logo,
@@ -133,9 +133,9 @@ class User {
                 phoneNum: fields.phoneNum || '',
                 group: fields.group
             }
-            const item_userName = fields.userName;
+            const item_id = fields._id;
             try {
-                await UserModel.findOneAndUpdate({ userName: item_userName }, { $set: userObj });
+                await UserModel.findOneAndUpdate({ _id: item_id }, { $set: userObj });
                 // 更新缓存
                // delete userObj.password;
                 req.session.user = _.assign(req.session.user, userObj)
