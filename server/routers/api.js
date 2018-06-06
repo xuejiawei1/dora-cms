@@ -104,10 +104,10 @@ router.post('/users/updateInfo', User.updateUser);
 // 修改密码
 router.post('/users/updatePassword',  User.updatePassword);
 // 获取用户通知信息
-router.get('/users/getUserNotifys', (req, res, next) => { req.query.user = !_.isEmpty(req.session.user) ? req.session.user._id : fields.author; next() }, UserNotify.getUserNotifys);
+router.get('/users/getUserNotifys', (req, res, next) => { req.query.user = !_.isEmpty(req.session.user) ? req.session.user._id : req.query.author; next() }, UserNotify.getUserNotifys);
 
 // 设置用户消息为已读
-router.get('/users/setNoticeRead', (req, res, next) => { req.query.user = !_.isEmpty(req.session.user) ? req.session.user._id : fields.author; next() }, UserNotify.setMessageHasRead);
+router.get('/users/setNoticeRead', (req, res, next) => { req.query.user = !_.isEmpty(req.session.user) ? req.session.user._id : req.query.author; next() }, UserNotify.setMessageHasRead);
 
 // 删除用户消息
 router.get('/users/delUserNotify', UserNotify.delUserNotify);
