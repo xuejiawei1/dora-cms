@@ -111,7 +111,6 @@ router.get('/users/setNoticeRead', (req, res, next) => { req.query.user = !_.isE
 
 // 删除用户消息
 router.get('/users/delUserNotify', UserNotify.delUserNotify);
-
 // 获取用户参与话题
 router.get('/users/getUserReplies', (req, res, next) => { req.query.user = !_.isEmpty(req.session.user) ? req.session.user._id : req.query.author; next() }, Message.getMessages);
 
