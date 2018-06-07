@@ -117,6 +117,7 @@ router.get('/users/getOneNotifyByParams', (req, res, next) => { req.query.user =
 // 获取用户参与话题
 router.get('/users/getUserReplies', (req, res, next) => { req.query._id = req.query.id; next() }, Message.getMessages);
 
+
 // 获取用户发布文章
 router.get('/users/getUserContents',(req, res, next) => { req.query.user; next() }, Content.getContents);
 
