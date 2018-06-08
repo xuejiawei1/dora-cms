@@ -340,7 +340,7 @@ class Content {
                 tags: fields.tags,
                 keywords: fields.keywords,
                 sImg: fields.sImg,
-                author: !_.isEmpty(req.session.adminUserInfo) ? req.session.adminUserInfo._id : '',
+                //author: !_.isEmpty(req.session.adminUserInfo) ? req.session.adminUserInfo._id : '',
                 state: fields.state,
                 isTop: fields.isTop,
                 from: fields.from,
